@@ -27,6 +27,12 @@
     <ClCompile Include="BassGameEntity.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="RolePet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RolePetOwnedStates.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BassGameEntity.h">
@@ -45,6 +51,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Loaction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RolePet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RolePetOwnedStates.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,6 +4,10 @@
 class BassGameEntity
 {
 public:
+	BassGameEntity(int id)
+	{
+		SetID(id);
+	}
 
 	int GetiID() const
 	{
@@ -13,9 +17,10 @@ public:
 	void SetID(int val)
 	{
 		m_ID = val;
+
+		m_iNextValidID = m_ID + 1;
 	}
 
-	virtual void Update() = 0;
 protected:
 private:
 	int m_ID;

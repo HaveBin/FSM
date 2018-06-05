@@ -3,6 +3,7 @@
 #include "State.h"
 #include "Loaction.h"
 #include "BassGameEntity.h"
+#include "Statemachine.h"
 
 const int m_Hp = 100;  //角色血量
 const int MedicinalWater = 5; // 身上血瓶数量
@@ -12,7 +13,7 @@ const int MaxWeightNegative = 100; //最大负重
 class Role : public BassGameEntity
 {
 public:
-	Role();
+	Role(int id);
 
 	location_type GetLocation() const;
 
@@ -45,10 +46,17 @@ public:
 	virtual void Update();
 
 	void ChangeState(State<Role>* new_state);
+
+	StateMachine<Role>* GetFSM()
+	{
+		return m_pStateMachine;
+	}
 private:
 	State<Role>* m_GurrentState;
 
 	location_type m_Location;
+
+	StateMachine<Role>* m_pStateMachine;
 
 	//血量
 	int m_RoleHp;

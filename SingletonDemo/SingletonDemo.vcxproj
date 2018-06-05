@@ -150,12 +150,16 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Role.cpp" />
     <ClCompile Include="RoleOwnedStates.cpp" />
+    <ClCompile Include="RolePet.cpp" />
+    <ClCompile Include="RolePetOwnedStates.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BassGameEntity.h" />
     <ClInclude Include="Loaction.h" />
     <ClInclude Include="Role.h" />
     <ClInclude Include="RoleOwnedStates.h" />
+    <ClInclude Include="RolePet.h" />
+    <ClInclude Include="RolePetOwnedStates.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Statemachine.h" />
   </ItemGroup>

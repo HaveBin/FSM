@@ -1,26 +1,42 @@
 #pragma once
+#include "State.h"
 
 template<typename T>
-class Statemachine
+class StateMachine
 {
 public:
+	StateMachine(T* owner)
+		:m_pOwner(owner)
+	{
+
+	}
+
+
 	void ChangeState(State<T>* new_state)
 	{
-		m_CurrentState->Exit(this);
+		m_pCurrentState->Exit(m_pOwner);  //这里以前是this指针
 
-		m_CurrentState = new_state;
+		m_pCurrentState = new_state;
 
-		m_CurrentState->Enter(this);
+		m_pCurrentState->Enter(m_pOwner);
 	}
 
+	//非常重要必须实现
 	void Update()
 	{
-		if (m_CurrentState)
+		if (m_pCurrentState)
 		{
-			m_CurrentState->Execute(this);
+			m_pCurrentState->Execute(m_pOwner);
 		}
 	}
-protected:
+
+	void SetCurrentState(State<T>* new_state)
+	{
+		m_pCurrentState = new_state;
+	}
+
 private:
-	State<T>* m_CurrentState;
+	T* m_pOwner;
+	State<T>* m_pCurrentState;
 };
+

@@ -1,15 +1,18 @@
 #include "Role.h"
 #include "RoleOwnedStates.h"
 
-Role::Role()
-	: m_iGoldCarried(0)
+Role::Role(int id)
+	: BassGameEntity(id)
+	,m_iGoldCarried(0)
 	, m_RoleHp(100)
 	, m_iRoleFatigue(188)
 	, m_iWeightNegative(0)
 	, m_iMedicinalWater(5)
 	,m_GurrentState(SeriaRoom::Instance())
 {
+	m_pStateMachine = new StateMachine<Role>(this);
 
+	m_pStateMachine->SetCurrentState(InstanceHouse::Instance());
 }
 
 location_type Role::GetLocation() const
